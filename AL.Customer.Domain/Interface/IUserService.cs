@@ -10,5 +10,10 @@ namespace AL.Customer.Domain.Interface
     public interface IUserService
     {
         IEnumerable<UserViewModel> GetAllUsers();
+        UserViewModel GetUser(int userId);
+
+        UserViewModel GetUserByUsername(string userName);
+        bool RegisterUser(RegisterViewModel registerDtos);
+        bool ValidatePassword(LoginDto loginDtos);
     }
 }

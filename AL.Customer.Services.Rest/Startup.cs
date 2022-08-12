@@ -1,3 +1,8 @@
+using AL.Customer.Data.Interface;
+using AL.Customer.Data.Services;
+using AL.Customer.Domain.Interface;
+using AL.Customer.Domain.Service;
+using AL.Customer.Services.Rest.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +15,7 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace AL.Customer.Services.Rest
@@ -28,7 +34,11 @@ namespace AL.Customer.Services.Rest
         {
 
             services.AddControllers();
-            //services.AddAutomapper(typeof(Startup));
+            services.AddApplicationService(Configuration);
+            //services.AddScoped<IUserService, UserService>();
+            //services.AddScoped<IUserRepository, UserRepository>();
+            //services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AL.Customer.Services.Rest", Version = "v1" });

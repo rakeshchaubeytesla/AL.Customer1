@@ -13,4 +13,8 @@
     <ProjectReference Include="..\AL.Customer.Effigy\AL.Customer.Effigy.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Extension\" />
+  </ItemGroup>
+
 </Project>
