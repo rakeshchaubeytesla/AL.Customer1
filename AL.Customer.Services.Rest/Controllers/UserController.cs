@@ -12,9 +12,11 @@ namespace AL.Customer.Services.Rest.Controllers
     public class UserController : BaseApiController
     {
         private readonly IUserService userService;
-        public UserController(IUserService _userService)
+        private readonly ITokenService tokenService;
+        public UserController(IUserService _userService, ITokenService _tokenService)
         {
             this.userService = _userService;
+            this.tokenService = _tokenService;
         }
 
         [HttpGet]
@@ -24,18 +26,30 @@ namespace AL.Customer.Services.Rest.Controllers
         }
 
         [HttpPost("register")]
-        public bool Register(RegisterViewModel registerDtos)
+        [AllowAnonymous]
+        public UserDtos Register(RegisterViewModel registerDtos)
         {
-            return userService.RegisterUser(registerDtos);
+            userService.RegisterUser(registerDtos);
+            return new UserDtos
+            {
+                UserName = registerDtos.UserName,
+                Token = tokenService.CreateToken(registerDtos.UserName)
+            };
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<bool>> Login(LoginDto loginDtos)
+        [AllowAnonymous]
+        public async Task<ActionResult<UserDtos>> Login(LoginDto loginDtos)
         {
             var user = userService.GetUserByUsername(loginDtos.UserName);
             if (user == null) return Unauthorized("InValid User");
 
-            return userService.ValidatePassword(loginDtos);
+            userService.ValidatePassword(loginDtos);
+            return new UserDtos
+            {
+                UserName = user.UserName,
+                Token = tokenService.CreateToken(user.UserName)
+            };
         }
 
     }

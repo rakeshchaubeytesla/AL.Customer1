@@ -3,13 +3,32 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AL.Customer.Services.Rest", "AL.Customer.Services.Rest\AL.Customer.Services.Rest.csproj", "{C03EBE75-26CB-4514-826C-D1569EAE9F33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AL.Customer.Services.Rest", "AL.Customer.Services.Rest\AL.Customer.Services.Rest.csproj", "{C03EBE75-26CB-4514-826C-D1569EAE9F33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AL.Customer.Effigy", "AL.Customer.Effigy\AL.Customer.Effigy.csproj", "{2F6F2984-01D5-4651-B0F7-66B014576E2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AL.Customer.Effigy", "AL.Customer.Effigy\AL.Customer.Effigy.csproj", "{2F6F2984-01D5-4651-B0F7-66B014576E2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AL.Customer.Domain", "AL.Customer.Domain\AL.Customer.Domain.csproj", "{E48BE976-D98A-4DAA-9E01-C9ECB2E32232}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AL.Customer.Domain", "AL.Customer.Domain\AL.Customer.Domain.csproj", "{E48BE976-D98A-4DAA-9E01-C9ECB2E32232}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AL.Customer.Data", "AL.Customer.Data\AL.Customer.Data.csproj", "{2D46EA7B-8751-4B93-AEC5-B6AD60D2406A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AL.Customer.Data", "AL.Customer.Data\AL.Customer.Data.csproj", "{2D46EA7B-8751-4B93-AEC5-B6AD60D2406A}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AL.UI", "AL.UI\", "{CF1035A8-5CE6-4E72-9E3E-90FE3B800242}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51388"
+		Debug.AspNetCompiler.PhysicalPath = "AL.UI\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51388\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51388"
+		Release.AspNetCompiler.PhysicalPath = "AL.UI\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51388\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51388"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +52,10 @@ Global
 		{2D46EA7B-8751-4B93-AEC5-B6AD60D2406A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D46EA7B-8751-4B93-AEC5-B6AD60D2406A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D46EA7B-8751-4B93-AEC5-B6AD60D2406A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF1035A8-5CE6-4E72-9E3E-90FE3B800242}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF1035A8-5CE6-4E72-9E3E-90FE3B800242}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF1035A8-5CE6-4E72-9E3E-90FE3B800242}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF1035A8-5CE6-4E72-9E3E-90FE3B800242}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

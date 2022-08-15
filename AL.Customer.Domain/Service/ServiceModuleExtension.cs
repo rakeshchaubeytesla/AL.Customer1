@@ -13,6 +13,7 @@ namespace AL.Customer.Domain.Service
         public static void AddServiceRepository(this IServiceCollection services )
         {
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<ITokenService, TokenService>();
         }
     }
 }
