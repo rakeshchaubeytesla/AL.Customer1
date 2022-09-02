@@ -14,6 +14,7 @@ namespace AL.Customer.Data.Extension
         public static void AddDataRepository(this IServiceCollection services)
         {
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IDailyBhavRepository, DailyBhavRepository>();
         }
     }
 }

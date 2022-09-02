@@ -14,6 +14,7 @@ namespace AL.Customer.Domain.Service
         {
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<ITokenService, TokenService>();
+            services.AddTransient<IDailyBhavService, DailyBhavService>();
         }
     }
 }
